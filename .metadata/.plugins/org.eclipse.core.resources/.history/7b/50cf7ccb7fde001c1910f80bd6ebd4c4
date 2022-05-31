@@ -1,0 +1,30 @@
+# Sample Test Definition Template
+# Possible steps:
+#		Given
+#			a fresh chess clock
+#		When / And
+#			I press the WHITE button
+#			I press the BLACK button
+#			I press the START button
+#			I press the MOD button
+#			I wait for (\d+) ms
+#			I wait for (\d+) s
+#		Then / And
+#			the MAIN display should display the text '(.*)'
+#			the WHITE display should display the number (\d+)
+#			the BLACK display should display the number (\d+)
+#			a BEEP should be made
+#			NO BEEP should be made
+Feature: Chess clock
+
+  Scenario: Basic test: Pressing each button.
+    Given a fresh chess clock
+		When I press the MOD button
+		Then BEEP should be made
+		And the MAIN display should display the text 'White initial time'
+		When I press the MOD button
+		Then BEEP should be made
+		And the MAIN display should display the text 'Black initial time'
+		When I press the MOD button
+		Then BEEP should be made
+		And the MAIN display should display the text 'Increment time'
